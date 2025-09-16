@@ -1,5 +1,4 @@
 """importamos la libreria turtle"""
-from tracemalloc import start
 import turtle as t 
 
 """aqui realizamos una linea recta de 100 pixeles sencillo """
@@ -18,17 +17,33 @@ import turtle as t
     #draw_line("red",100,0,0)
 #t.done() 
 """este bloque realizaremos un cuadrado con turtle creamos un def draw_square"""""
-def draw_square(color,length,start_x,start_y):
+#def draw_square(color,length,start_x,start_y):
+    #pen=t.Turtle()
+    #pen.penup()
+    #pen.goto(start_x,start_y)
+    #pen.pendown()
+    #pen.pencolor(color)
+"""aqui realizamos un for para repetir la direccion de la linea y asi realizar el cuadrado"""
+    #for i in range(4):
+     #   pen.forward(length)
+      #  pen.right(90)
+"""aqui invocamos el documento principal para que asegure el correr el codigo """
+#if __name__=="__main__":
+#    draw_square("blue",100,0,0)
+#t.done()
+"""realizaremos el bloque de la figura del triangulo con turtle"""""
+"""en esta parte se creo el def para hacer mencion de la figura del triangulo"""
+def draw_triangle(color,length,start_x,start_y):
     pen=t.Turtle()
     pen.penup()
     pen.goto(start_x,start_y)
     pen.pendown()
     pen.pencolor(color)
-    """aqui realizamos un for para repetir la direccion de la linea y asi realizar el cuadrado"""
-    for i in range(4):
+    """en esta seccion del bloque se realizar un for para repetir el la recta hasta dar con el angulo de 120 grados y asi realizar el triangulo """
+    for i in range(3):
         pen.forward(length)
-        pen.right(90)
-"""aqui invocamos el documento principal para que asegure el correr el codigo """
+        pen.right(120)
+"""mencionamos el codigo principal main para realizar correctamente el codigo y asi evitar conflictos de modulos tambien cambiamos los color a verde para marcar la diferencia de figuras"""
 if __name__=="__main__":
-    draw_square("blue",100,0,0)
-t.done()
+    draw_triangle("green",100,0,0)
+t.done() # t.done nos sirve crucialmente para mantener la ventana del tkinter abierto y correr el codigo correctamente
