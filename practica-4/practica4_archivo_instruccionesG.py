@@ -1,13 +1,18 @@
 import turtle
-
-# --- Configuración de la pantalla ---
+"""Asistencia de IA (Gemini Code Assist)
+Este código fue revisado y refactorizado con la asistencia de Gemini.
+La IA ayudó a mejorar la robustez del script, especialmente en la función de procesamiento (ejecutar_instrucciones), 
+al sugerir la implementación de bloques try...except más específicos
+para manejar errores comunes como la ausencia del archivo (FileNotFoundError) o la conversión incorrecta de argumentos numéricos (ValueError).
+"""
+ """Configuración de la pantalla definimos su color entre su velocidad de la tortuga y asi poder invocarla"""
 wn = turtle.Screen()
 wn.title("Dibujante de Turtle")
 wn.bgcolor("lightgray")
 t = turtle.Turtle()
-t.speed(5) # Establecer la velocidad de la tortuga
+t.speed(5) 
 
-# --- Definición de funciones de dibujo ---
+ """Definición de funciones de dibujos en esta seccion mencionamos como se debe realizar las figuras definimos su color,lados , con que coordenas maneja , que lados deben ir """
 
 def dibujar_cuadrado(x_inicial, y_inicial, lado, color):
     """Dibuja un cuadrado con el lado especificado, a partir de las coordenadas iniciales y con el color dado."""
@@ -49,23 +54,25 @@ def dibujar_linea(x_inicial, y_inicial, x_final, y_final, color):
     print(f"Dibujando una línea desde ({x_inicial}, {y_inicial}) a ({x_final}, {y_final}) de color {color}")
     t.goto(x_final, y_final)
 
-# --- Procesar el archivo de instrucciones ---
+"""Procesar el archivo de instrucciones que realizar el uso de las coordenadas y el color que se usara para realizar las figuras correspondientes """
 def ejecutar_instrucciones(nombre_archivo):
     """Lee y ejecuta las instrucciones de un archivo de texto."""
     try:
         with open(nombre_archivo, 'r') as archivo:
             for i, linea in enumerate(archivo):
-                # Limpiar la línea y dividirla en partes
+    """Limpiar la línea y dividirla en partes"""
                 linea = linea.strip().lower()
                 partes = linea.split()
                 
                 if not partes:
-                    continue # Saltar líneas vacías
+                    continue 
+        """Saltar líneas vacías"""
                 
                 comando = partes[0]
                 argumentos = partes[1:]
                 print(f"Instrucción {i+1}: '{linea}'")
-
+ """en esta seccion declaramos el if para realizar diferentes else para agrumentar las diferentes figuras y con sus correspondientes prints para usar de guiar para 
+ implementar el uso correcto de las instrucciones de dibujante.txt """
                 try:
                     if comando == 'cuadrado':
                         if len(argumentos) == 4:
@@ -102,9 +109,10 @@ def ejecutar_instrucciones(nombre_archivo):
     except Exception as e:
         print(f"Ocurrió un error inesperado: {e}")
 
-# --- Ejecución principal del programa ---
+"""Ejecución principal del programa """
 if __name__ == "__main__":
     ejecutar_instrucciones("dibujante.txt")
     
-    # Mantener la ventana abierta hasta que se haga clic
+    """Mantener la ventana abierta hasta que se haga clic"""
     turtle.exitonclick()
+
