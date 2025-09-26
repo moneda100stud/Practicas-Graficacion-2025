@@ -1,0 +1,12 @@
+Este archivo contiene instrucciones para el script de Python.
+Cada línea es una instrucción con formato:
+[comando] [x_inicial] [y_inicial] [tamaño o x_final] [y_final si aplica] [color]
+cuadrado -150 150 100 blue
+triangulo 50 150 75 red
+circulo -150 -100 60 green
+linea 150 150 150 -150 orange
+linea -150 -150 150 -150 yellow
+circulo 100 -100 25 purple
+
+Esta es una instrucción inválida que el programa ignorará
+instruccion_invalida 1 2 3 4
