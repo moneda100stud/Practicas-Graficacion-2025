@@ -82,4 +82,4 @@ Es importante tener en cuenta que la primera versión del proyecto se centrará 
 - **Reglas complejas:** Inicialmente, es posible que no se implementen todas las reglas especiales del ajedrez, como la captura *al paso* (en passant), el enroque o la promoción del peón. Estas se pueden añadir en futuras iteraciones.
 - **No se guardarán partidas:** No habrá una función para guardar el estado de una partida y reanudarla más tarde.
 
-Con esta estructura, podrás desarrollar tu juego de manera ordenada y modular, lo que facilitará la implementación de nuevas características y la depuración de errores. ¡Mucho éxito con tu proyecto!
+
